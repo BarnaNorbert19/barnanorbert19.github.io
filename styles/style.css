@@ -1,9 +1,59 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+body
+{
+    height: 100%;
+    margin: 0px;
+    font-family: Montserrat;
+}
+
 #bg-vid
 {
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
+}
+
+.content
+{
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+}
+
+.navbar-icons
+{
+    height: 35px;
+    width: 35px;
+}
+
+.navbar
+{
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#copyright
+{
+    color: white;
+}
+
+.link-decor
+{
+    text-decoration: none;
 }
 
 @media (min-aspect-ratio: 16/9)
@@ -23,3 +73,21 @@
         height: 100%;
     }
 }
+
+@media screen and (max-width: 1065px) 
+{
+    .navbar
+    {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+  }
+
+@media screen and (max-width: 991px) 
+{
+    .navbar
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+  }
