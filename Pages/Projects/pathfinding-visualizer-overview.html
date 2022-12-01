@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barna Norbert</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="../../styles/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://barnanorbert19.github.io">Barna Norbert</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../../index.html">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about-me.html">Rólam</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Projektek
+            </a>
+            <ul class="dropdown-menu dropdown-dark">
+              <li><a class="dropdown-item" href="pathfinding-visualizer-overview.html">Pathfinding visualizer (összevont) [C++, C#]</a></li>
+              <li><a class="dropdown-item" href="notes-overview.html">Jegyzetek [Powershell, Bash]</a></li>
+              <li><a class="dropdown-item" href="class-register-overview.html">E-Napló (összevont) [ASP.NET]</a></li>
+              <li><a class="dropdown-item" href="smaller-projects.html">Kisebb projektek</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav sm-icons">
+          <li class="nav-item"><a class="nav-link" href="https://github.com/BarnaNorbert19" target="_blank"><img class="navbar-icons" src="../../img/GitHub-Mark-Light-64px.png"/></a></li>
+          <li class="nav-item"><a class="nav-link" href="https://twitter.com/BarnaNorbert19" target="_blank"><img class="navbar-icons" src="../../img/Twitter-logo-white.svg"/></a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="content-projects">
+    <h1 class="color-white text-center project-title">Pathfinding visualizer</h1>
+    <p class="color-white text-center project-desc"> 
+        A projekt pathfinding vagy útvonalkereső algoritmusokra épül, megtalálható A*, Dijkstra, Depth first, Breadth first. A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer">itt</a> található.<br>
+        Kezdetben .NET WPF-ben MVVM logika felhasználásával készült és teljes értékűnek, befejezettnek is gondolom, de rengeteg változtatásra szorul (hogy miért nem frissítem, később kifejtem).<br>
+        A projekt folyamán és befejezése után rengeteg problémával/hibával szembesültem.<br>
+        Az első, hogy kifejezetten olyan komponensek/controllok nincsenek beépítve, amivel a kívánt GUI-t elérhettem volna.<br>
+        Tehát egy szinttel lejjebb kellet menjek és alapvető geometriai alakzatokat kellett használnom.<br>
+        Egy másik nagyon fontos szempont, hogy MVVM logikát nem ilyen projektekhez találták ki.<br>
+        Ugyebár ICommandokat használ a program, ami eleve lassabb, mint az eventek, evvel nem is lenne probléma, ha nem lenne másodpercenként akár többször is meghívva ugyan az az event.<br>
+        Ezen problémák beazonosítása után, arra a konklúzióra jutottam, hogy majdnem az egész GUI struktúrát újra kell írni, viszont úgy gondoltam ennyi erővel akár még alacsonyabb szintre is mehetnék, hiszen ahogy korábban említettem alapvető geometriai alakzatokkal dolgozom.<br>
+        Korábban már találkoztam a grafikus programozással, de még komolyan sose próbáltam őket.<br>
+        Több lehetőség közül is választhattam: CUDA, Vulkan, OpenGL, DirectX. Vulkan-ról azt gondoltam nehezebb, mint a többi (ez egyébként nem igaz), ezért azt elvetettem.<br>
+        CUDA csak NVIDIA kártyákon működik, ez számomra egy kizáró ok hiszen nem elég nagyszabású a projekt, hogy érezhető legyen a teljesítménybeli különbség NVIDIA oldalon.<br>
+        DirectX hasonlóan CUDA-hoz csak Windows-on elérhető, így hát maradt az OpenGL.<br>
+        OpenGL elérhető C# nyelven OpenTK néven, de már egy ideje meg szerettem volna tanulni C++ -ban programozni, viszont a pathfinding kódot nem akartam újraírni, ezért mint scripting language-et beleintegráltam <a href="https://www.mono-project.com">Mono</a> segítségével.<br>
+        A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer-with-opengl">itt</a> található.<br>
+    </p>
+  </div>
+
+  <div class="video-background" style="border: black;">
+  <video autoplay loop muted play-inline id="bg-vid">
+    <source src="../../img/main-bg.mp4" type="video/mp4">
+  </video>
+  </div>
+  <footer class="footer text-center text-lg-center">
+    <p class="color-white">Copyright &copy; Barna Norbert 2022</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="../../scripts/main.js"></script>
+</body>
+</html>

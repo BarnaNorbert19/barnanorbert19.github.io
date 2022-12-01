@@ -18,6 +18,18 @@ body
     z-index: -1;
 }
 
+.project-title
+{
+    margin-top: 40px;
+}
+
+.project-desc
+{
+    padding-left: 500px;
+    padding-right: 500px;
+    font-size: large;
+}
+
 .content
 {
     text-align: center;
@@ -46,7 +58,7 @@ body
     width: 100%;
 }
 
-#copyright
+.color-white
 {
     color: white;
 }
