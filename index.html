@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   </head>
 <body>
+  <div class="d-flex flex-column min-vh-100">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="https://barnanorbert19.github.io">Barna Norbert</a>
@@ -19,18 +20,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Kezdőlap</a>
+            <a class="nav-link active" aria-current="page" href="" id="home-page">Kezdőlap</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Pages/about-me.html">Rólam</a>
+            <a class="nav-link" href="#" id="about-me-page">Rólam</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="projects-page">
               Projektek
             </a>
             <ul class="dropdown-menu dropdown-dark">
-              <li><a class="dropdown-item" href="Pages/Projects/pathfinding-visualizer-overview.html">Pathfinding visualizer (összevont) [C++, C#]</a></li>
-              <li><a class="dropdown-item" href="Pages/Projects/notes-overview.html">Jegyzetek [Powershell, Bash]</a></li>
+              <li><a class="dropdown-item" id="pathfinding-visualizer-page">Pathfinding visualizer (összevont) [C++, C#]</a></li>
+              <li><a class="dropdown-item" id="notes-page">Jegyzetek [Powershell, Bash]</a></li>
               <li><a class="dropdown-item" href="Pages/Projects/class-register-overview.html">E-Napló (összevont) [ASP.NET]</a></li>
               <li><a class="dropdown-item" href="Pages/Projects/smaller-projects.html">Kisebb projektek</a></li>
             </ul>
@@ -44,13 +45,8 @@
     </div>
   </nav>
   
-  <div class="content">
-  <div class="container text-center">
-    <h1 class="align-middle">Üdvözöllek !</h1>
-    <h3 class="align-middle"><span class="auto-input">Barna Norbert</span> vagyok.</h2>
-    <h5>Szenvedélyem az IT, </h5>
-      <h5>Ha többet szeretnél rólam megtudni, kattints a <a href="Pages/about-me.html" class="link-decor">rólam</a> oldalra.</h5>
-  </div>
+  <div id="desc-container" class="d-flex justify-content-center align-items-center h-100 flex-grow-1">
+  
 </div>
 
   <div class="video-background" style="border: black;">
@@ -58,9 +54,10 @@
     <source src="img/main-bg.mp4" type="video/mp4">
   </video>
   </div>
-  <footer class="footer text-center text-lg-center">
-    <p class="color-white">Copyright &copy; Barna Norbert 2022</p>
+  <footer class="mt-auto text-center text-lg-center">
+    <p class="color-white">Copyright &copy; <span id="copyright-year">2022</span> Barna Norbert</p>
   </footer>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="scripts/main.js"></script>

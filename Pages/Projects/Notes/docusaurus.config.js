@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Jegyzetek',
   tagline: 'Készítette: Barna Norbert',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'http://127.0.0.1:5500',
+  baseUrl: '/Pages/Projects/Notes/build/', // live build -> /Notes/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
