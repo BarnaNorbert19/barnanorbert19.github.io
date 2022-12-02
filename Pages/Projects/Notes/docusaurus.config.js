@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Jegyzetek',
   tagline: 'Készítette: Barna Norbert',
-  url: 'http://127.0.0.1:5500',
+  url: 'https://barnanorbert19.github.io',
   baseUrl: '/Notes/', // test build -> /Pages/Projects/Notes/build/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
