@@ -9,7 +9,7 @@ const config = {
   title: 'Jegyzetek',
   tagline: 'Készítette: Barna Norbert',
   url: 'http://127.0.0.1:5500',
-  baseUrl: '/Pages/Projects/Notes/build/', // live build -> /Notes/
+  baseUrl: '/Notes/', // test build -> /Pages/Projects/Notes/build/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

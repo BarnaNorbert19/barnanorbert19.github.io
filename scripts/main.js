@@ -1,6 +1,5 @@
 function toMain(fromPage = null)
 {
-  console.log("asd");
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "../Pages/index-text.html", false);
   
@@ -34,10 +33,10 @@ function toMain(fromPage = null)
 new Typed(".auto-input", options);
 }
 
-function fromMain(path, toPage)
+function fromMain(path, toPage, async = true)
 {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', path, true);
+  xhr.open('GET', path, async);
   xhr.onload = function()
   {
     if (this.status == 200)
@@ -51,11 +50,49 @@ function fromMain(path, toPage)
   xhr.send();
 }
 
+function changeText(path, async = true)
+{
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', path, async);
+  xhr.onload = function()
+  {
+    if (this.status == 200)
+    {
+      document.getElementById("desc-container").innerHTML = this.responseText;
+    }
+  }
+
+  xhr.send();
+}
+
+function changeButton(source1, source2)
+{
+  document.getElementById('short-text-button').addEventListener('click', () => 
+    {
+      changeText(source1, false);
+
+      document.getElementById('long-text-button').addEventListener('click', () => 
+      {
+        changeText(source2, false);
+
+        changeButton(source1, source2);
+      });
+    });
+}
+
 window.addEventListener('load', toMain(null));
 
-document.getElementById('pathfinding-visualizer-page').addEventListener('click', () =>{fromMain("/../Pages/Projects/pathfinding-visualizer-overview.html", "projects-page")});
-document.getElementById('notes-page').addEventListener('click', () =>{fromMain("/../Pages/Projects/notes-overview.html", "projects-page")});
-document.getElementById('home-page').addEventListener('click', toMain);
+document.getElementById('pathfinding-visualizer-page').addEventListener('click', () =>
+{
+  fromMain("/../Pages/Projects/pathfinding-visualizer-overview.html", "projects-page", false);
+  
+  changeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
+  
+});
+document.getElementById('notes-page').addEventListener('click', () => fromMain("/../Pages/Projects/notes-overview.html", "projects-page"));
+document.getElementById('smaller-projects-page').addEventListener('click', () => fromMain("/../Pages/Projects/smaller-projects-overview.html", "projects-page"));
+document.getElementById('about-me-page').addEventListener('click', () => fromMain("/../Pages/about-me-text.html", "about-me-page"));
+document.getElementById('home-page').addEventListener('click', () => toMain());
 
 
 document.getElementById("copyright-year").innerHTML = new Date().getFullYear();

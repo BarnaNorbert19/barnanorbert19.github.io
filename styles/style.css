@@ -14,7 +14,6 @@
 .title
 {
     font-size: 50px;
-    color: darkgreen;
 }
 
 #bg-vid
@@ -40,7 +39,15 @@
 {
     padding-left: 500px;
     padding-right: 500px;
-    font-size: large;
+    font-size: medium;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.small-project-sub-title
+{
+    color: #39ace7;
+    font-weight: bold;
 }
 
 .navbar-icons
@@ -70,6 +77,15 @@
     width: 100px;
     height: 25px;
     font-size: medium;
+}
+
+.demo-img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 @media (min-aspect-ratio: 16/9)
@@ -132,6 +148,18 @@
         padding-left: 50px;
         padding-right: 50px;
         font-size: x-large;
+    }
+
+    #sub-title-1
+    {
+        font-size: xx-large;
+    }
+
+    .sub-title-2
+    {
+        font-size: x-large;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 

@@ -1,20 +1,28 @@
   <div class="content-projects d-flex w-100 justify-content-center align-items-center flex-column">
     <h1 class="color-white text-center project-title">Pathfinding visualizer</h1>
-    <button class="btn btn-primary short-text-button">Rövid leírás</button>
+    <button id="short-text-button" class="btn btn-primary short-text-button">Rövid leírás</button>
     <p class="color-white text-center project-desc"> 
-        A projekt pathfinding vagy útvonalkereső algoritmusokra épül, megtalálható A*, Dijkstra, Depth first, Breadth first. A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer">itt</a> található.<br>
+        A projekt pathfinding vagy útvonalkereső algoritmusokra épül, megtalálható A*, Dijkstra, Depth first, Breadth first.
         Kezdetben .NET WPF-ben MVVM logika felhasználásával készült és teljes értékűnek, befejezettnek is gondolom, de rengeteg változtatásra szorul (hogy miért nem frissítem, később kifejtem).<br>
-        A projekt folyamán és befejezése után rengeteg problémával/hibával szembesültem.<br>
-        Az első, hogy kifejezetten olyan komponensek/controllok nincsenek beépítve, amivel a kívánt GUI-t elérhettem volna.<br>
-        Tehát egy szinttel lejjebb kellet menjek és alapvető geometriai alakzatokat kellett használnom.<br>
-        Egy másik nagyon fontos szempont, hogy MVVM logikát nem ilyen projektekhez találták ki.<br>
-        Ugyebár ICommandokat használ a program, ami eleve lassabb, mint az eventek, evvel nem is lenne probléma, ha nem lenne másodpercenként akár többször is meghívva ugyan az az event.<br>
-        Ezen problémák beazonosítása után, arra a konklúzióra jutottam, hogy majdnem az egész GUI struktúrát újra kell írni, viszont úgy gondoltam ennyi erővel akár még alacsonyabb szintre is mehetnék, hiszen ahogy korábban említettem alapvető geometriai alakzatokkal dolgozom.<br>
-        Korábban már találkoztam a grafikus programozással, de még komolyan sose próbáltam őket.<br>
-        Több lehetőség közül is választhattam: CUDA, Vulkan, OpenGL, DirectX. Vulkan-ról azt gondoltam nehezebb, mint a többi (ez egyébként nem igaz), ezért azt elvetettem.<br>
-        CUDA csak NVIDIA kártyákon működik, ez számomra egy kizáró ok hiszen nem elég nagyszabású a projekt, hogy érezhető legyen a teljesítménybeli különbség NVIDIA oldalon.<br>
-        DirectX hasonlóan CUDA-hoz csak Windows-on elérhető, így hát maradt az OpenGL.<br>
-        OpenGL elérhető C# nyelven OpenTK néven, de már egy ideje meg szerettem volna tanulni C++ -ban programozni, viszont a pathfinding kódot nem akartam újraírni, ezért mint scripting language-et beleintegráltam <a href="https://www.mono-project.com">Mono</a> segítségével.<br>
-        A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer-with-opengl">itt</a> található.<br>
+        <br></br>
+        A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer" target="_blank" class="link-decor">itt</a> található.
+        <img src="../../img/pathfinding-demo.gif" alt="pathfinding-demo" class="img-fluid demo-img">
+        
+        A projekt folyamán és befejezése után rengeteg problémával/hibával szembesültem.
+        Az első, hogy kifejezetten olyan komponensek/controllok nincsenek beépítve, amivel a kívánt GUI-t elérhettem volna.
+        Tehát egy szinttel lejjebb kellet menjek és alapvető geometriai alakzatokat kellett használnom.
+        Egy másik nagyon fontos szempont, hogy MVVM logikát nem ilyen projektekhez találták ki.
+        Ugyebár ICommandokat használ a program, ami eleve lassabb, mint az eventek, evvel nem is lenne probléma, ha nem lenne másodpercenként akár többször is meghívva ugyan az az event.
+        Ezen problémák beazonosítása után, arra a konklúzióra jutottam, hogy majdnem az egész GUI struktúrát újra kell írni, viszont úgy gondoltam ennyi erővel akár még alacsonyabb szintre is mehetnék, hiszen ahogy korábban említettem alapvető geometriai alakzatokkal dolgozom.
+        <br></br>
+        Korábban már találkoztam a grafikus programozással, de még komolyan sose próbáltam őket.
+        Több lehetőség közül is választhattam: CUDA, Vulkan, OpenGL, DirectX. Vulkan-ról azt gondoltam nehezebb, mint a többi (ez egyébként nem igaz), ezért azt elvetettem.
+        CUDA csak NVIDIA kártyákon működik, ez számomra egy kizáró ok hiszen nem elég nagyszabású a projekt, hogy érezhető legyen a teljesítménybeli különbség NVIDIA oldalon.
+        DirectX hasonlóan CUDA-hoz csak Windows-on elérhető, így hát maradt az OpenGL.
+        OpenGL elérhető C# nyelven OpenTK néven, de már egy ideje meg szerettem volna tanulni C++ -ban programozni. 
+        Pathfinding algoritmus kódokat nem akartam újraírni, ezért mint scripting language-et beleintegráltam a megírt C# kódot <a href="https://www.mono-project.com" target="_blank" class="link-decor">Mono</a> segítségével.
+        <br></br>
+        A projekt <a href="https://github.com/BarnaNorbert19/Pathfinding-visualizer-with-opengl" target="_blank" class="link-decor">itt</a> található.
+        <img src="../../img/pathfinding2-demo.gif" alt="pathfinding-demo" class="img-fluid demo-img">
     </p>
   </div>
