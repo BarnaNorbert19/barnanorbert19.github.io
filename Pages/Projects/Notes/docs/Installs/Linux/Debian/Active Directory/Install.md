@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::tip Automatikus bash script
 
-Letölthető [itt](../../../../Scripts/AD_Install.sh)
+Letölthető [itt](../../../../Scripts/Debian_AD_Install.sh)
 
 :::
 

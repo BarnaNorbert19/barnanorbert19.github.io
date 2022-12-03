@@ -9,7 +9,7 @@ const config = {
   title: 'Jegyzetek',
   tagline: 'Készítette: Barna Norbert',
   url: 'https://barnanorbert19.github.io',
-  baseUrl: '/Notes/', // test build -> /Pages/Projects/Notes/build/
+  baseUrl: '/Pages/Projects/Notes/build/', // test build -> /Pages/Projects/Notes/build/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -65,9 +65,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'Overview',
+            docId: 'Installs/Overview',
             position: 'left',
-            label: 'Telepítések',
+            label: 'Dokumentáció',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -81,11 +81,16 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Dokumentáció',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/Overview',
+                label: 'Telepítések',
+                to: '/docs/Installs/Overview',
+              },
+
+              {
+                label: 'Karbantartás',
+                to: '/docs/Managing/Overview',
               },
             ],
           },
