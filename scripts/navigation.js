@@ -4,6 +4,58 @@ function loadPage(path, loadInto, pushStateTitle, pushStateUrl)
     history.pushState(path, pushStateTitle, pushStateUrl);
 }
 
+function loadPageSynchronously(path, loadInto, pushStateTitle, pushStateUrl)
+{
+    $.ajax({
+        type: "GET",
+        url: path,
+        dataType: "text",
+        async: false,
+        success : function(data) {
+              $(loadInto).html(data);
+        }
+  });
+
+    history.pushState(path, pushStateTitle, pushStateUrl);
+}
+
+function loadPageSynchronously(path, loadInto)
+{
+    $.ajax({
+        type: "GET",
+        url: path,
+        dataType: "text",
+        async: false,
+        success : function(data) {
+              $(loadInto).html(data);
+        }
+  });
+}
+
+function changeActivePage(objectToSet, objectToRemoveFrom)
+{
+    if ($(objectToRemoveFrom).hasClass("active"))
+        $(objectToRemoveFrom).removeClass("active");
+
+    if (!$(objectToSet).hasClass("active"))
+        $(objectToSet).addClass("active");
+}
+
+function setTextChangeButton(source1, source2)
+{
+  $('#short-text-button').on('click', function(e)
+    {
+      loadPageSynchronously(source1, '#desc-container');
+
+      $('#long-text-button').on('click', function(e)
+      {
+        loadPageSynchronously(source2, '#desc-container');
+
+        setTextChangeButton(source1, source2);
+      });
+    });
+}
+
 $(function()
 {
     //Initial load based on document.referrer (redirect)
@@ -32,11 +84,16 @@ $(function()
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
           }
 
+    let activePage = '#home-page';
+
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
     {
         e.preventDefault();
         loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+        changeActivePage('#home-page', activePage);
+        activePage = '#home-page';
+        
     });
 
     //Navbar about me page onclick
@@ -44,20 +101,30 @@ $(function()
     {
         e.preventDefault();
         loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
+        changeActivePage('#about-me-page', activePage);
+        activePage = '#about-me-page';
     });
 
     //Navbar pathfinding page onclick
     $('#pathfinding-visualizer-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPage("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
-    });
+        loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+        
+        setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
+        
+        changeActivePage('#projects-page', activePage);
+        activePage = '#projects-page';
+
+        });
 
     //Navbar Notes page onclick
     $('#notes-page').on('click', function(e)
     {
         e.preventDefault();
         loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes");
+        changeActivePage('#projects-page', activePage);
+        activePage = '#notes-page';
     });
 
     //Navbar class register page onclick
@@ -65,6 +132,8 @@ $(function()
     {
         e.preventDefault();
         loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register");
+        changeActivePage('#projects-page', activePage);
+        activePage = '#projects-page';
     });
 
     //Navbar smaller proj. page onclick
@@ -72,6 +141,8 @@ $(function()
     {
         e.preventDefault();
         loadPage("/../Pages/Projects/smaller-projects-overview.html", '#desc-container', "Smaller projects", "./Smaller-projects");
+        changeActivePage('#projects-page', activePage);
+        activePage = '#projects-page';
     });
 
     //Browser history
