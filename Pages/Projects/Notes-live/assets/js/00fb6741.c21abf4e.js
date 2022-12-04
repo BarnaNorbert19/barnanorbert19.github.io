@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknotes=self.webpackChunknotes||[]).push([[4667],{259:e=>{e.exports=JSON.parse('{"label":"hello","permalink":"/Pages/Projects/Notes-live/blog/tags/hello","allTagsPath":"/Pages/Projects/Notes-live/blog/tags","count":2}')}}]);
