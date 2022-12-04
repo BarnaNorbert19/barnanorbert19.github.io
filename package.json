@@ -1,0 +1,7 @@
+{
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  "dependencies": {
+    "ghspa": "^1.0.0"
+  }
+}
