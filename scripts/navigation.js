@@ -16,8 +16,13 @@ function loadAboutMe()
 
 $(function()
 {
-    //Initial home page load
-    loadHomePage();
+    //Initial load based on document.referrer (redirect)
+    var comingFrom = document.referrer.split("/")[3];
+    if (comingFrom == "About-me")
+        loadAboutMe();
+    
+    if (comingFrom == "Home")
+        loadHomePage();
 
     //Navbar about me page onclick
     $('#about-me-page').on('click', function(e)
