@@ -60,6 +60,7 @@ $(function()
 {
     //Initial load based on document.referrer (redirect)
     var comingFrom = document.referrer.split("/")[3];
+    let activePage = '#home-page';
 
         switch(comingFrom) {
             case "Home":
@@ -100,8 +101,6 @@ $(function()
               changeActivePage('#home-page', activePage);
               activePage = '#home-page';
           }
-
-    let activePage = '#home-page';
 
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
