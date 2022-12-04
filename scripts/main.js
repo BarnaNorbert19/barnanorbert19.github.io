@@ -23,14 +23,6 @@ function toMain(fromPage = null)
 
   xhr.send();
 
-  var options = {
-    strings: ['Barna Norbert', 'Rendszergazda'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    loop: true
-  };
-
-new Typed(".auto-input", options);
 }
 
 function fromMain(path, toPage, async = true)
@@ -89,10 +81,24 @@ document.getElementById('pathfinding-visualizer-page').addEventListener('click',
   changeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
   
 });
-document.getElementById('notes-page').addEventListener('click', () => fromMain("/../Pages/Projects/notes-overview.html", "projects-page"));
+document.getElementById('notes-page').addEventListener('click', () =>{ 
+  fromMain("/../Pages/Projects/notes-overview.html", "projects-page", false);
+  
+});
 document.getElementById('smaller-projects-page').addEventListener('click', () => fromMain("/../Pages/Projects/smaller-projects-overview.html", "projects-page"));
 document.getElementById('about-me-page').addEventListener('click', () => fromMain("/../Pages/about-me-text.html", "about-me-page"));
+
 document.getElementById('home-page').addEventListener('click', () => toMain());
 
 
-document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+$("#copyright-year").innerHTML = new Date().getFullYear();
+
+
+var options = {
+  strings: ['Barna Norbert', 'Rendszergazda'],
+  typeSpeed: 100,
+  backSpeed: 100,
+  loop: true
+};
+
+new Typed(".auto-input", options);
