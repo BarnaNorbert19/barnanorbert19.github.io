@@ -1,67 +1,104 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barna Norbert</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="styles/style.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <script type="text/javascript" src="scripts/ghspa.js"></script>
-  </head>
-<body>
-  <div class="d-flex flex-column min-vh-100">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/Home">Barna Norbert</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Home" id="home-page">Kezdőlap</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/About-me" id="about-me-page">Rólam</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="projects-page">
-              Projektek
-            </a>
-            <ul class="dropdown-menu dropdown-dark">
-              <li><a class="dropdown-item" href="/Projects/Pathfinding" id="pathfinding-visualizer-page">Pathfinding visualizer (összevont) [C++, C#]</a></li>
-              <li><a class="dropdown-item" href="/Projects/Notes" id="notes-page">Jegyzetek [Powershell, Bash]</a></li>
-              <li><a class="dropdown-item" href="/Projects/Class-register">E-Napló (összevont) [ASP.NET]</a></li>
-              <li><a class="dropdown-item" href="/Projects/Smaller-projects" id="smaller-projects-page">Kisebb projektek</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="navbar-nav sm-icons">
-          <li class="nav-item"><a class="nav-link" href="https://github.com/BarnaNorbert19" target="_blank"><img class="navbar-icons" src="img/GitHub-Mark-Light-64px.png"/></a></li>
-          <li class="nav-item"><a class="nav-link" href="https://twitter.com/BarnaNorbert19" target="_blank"><img class="navbar-icons" src="img/Twitter-logo-white.svg"/></a></li>
-      </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div id="desc-container" class="d-flex justify-content-center align-items-center h-100 flex-grow-1">
-  
-</div>
+<html>
 
-  <div class="video-background" style="border: black;">
-  <video autoplay loop muted play-inline id="bg-vid">
-    <source src="img/main-bg.mp4" type="video/mp4">
-  </video>
-  </div>
-  <footer class="mt-auto text-center text-lg-center">
-    <p class="color-white">Copyright &copy; <span id="copyright-year">2022</span> Barna Norbert</p>
-  </footer>
-</div>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="scripts/navigation.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Single Page Applications for GitHub Pages - Web Semantics, Inc.</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/lib/base-64/base64.js"></script>
+    <script type="text/javascript" src="assets/lib/larder/larder.js"></script>
+    <script type="text/javascript" src="assets/lib/gitters/gitters.js"></script>
+    <script type="text/javascript" src="assets/lib/bragit/bragit.js"></script>
+    <script>var redirect = location.href</script>
+    <script type="text/javascript" src="ghspa.js"></script>
+    <script>
+      $(function() {
+          if (location.href != redirect) {
+              $('#message').html('Coming at you from')
+              $('#message-detail').html(location.href)
+          } else {
+            $('#message').html('')
+            $('#message-detail').html('Still here at the index.html file')
+          }
+      })
+    </script>
+</head>
+<body>
+    <div class="pusher">
+        <div class="ui vertical masthead center aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary menu">
+                    <div class="right item">
+                        <a class="item" href="/gh-pages-spa">Home</a>
+                        <a class="item" href="/gh-pages-spa/about">About</a>
+                        <a class="item" href="/gh-pages-spa/contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui text hero container">
+                <img src="assets/img/pikachu.svg">
+                <h1 class="ui header">Hi. I'm Pikachu.</h1>
+                <div class="ui right big yellow image label">
+                    <i class="info icon"></i>
+                    <span id="message"></span>
+                    <div class="detail" id="message-detail">Let me tell you something!</div>
+                </div>
+
+                <p>I'll help you build Single Page Applications with Github Pages.</p>
+                <a class="ui labeled huge button github-websemantics-gh-pages-spa-stars">
+                    <div class="ui grey huge button"> <i class="star icon"></i> Stars </div>
+                    <div class="ui basic grey left pointing label"> <i class="spinner loading icon"></i> </div>
+                </a>
+                <a class="ui labeled huge button github-websemantics-gh-pages-spa-forks">
+                    <div class="ui grey huge button"> <i class="fork icon"></i> Forks </div>
+                    <div class="ui basic grey left pointing label"> <i class="spinner loading icon"></i> </div>
+                </a>
+                <a class="ui grey huge button github-websemantics-gh-pages-spa-github"> <i class="github icon"></i> Github </a>
+            </div>
+
+        </div>
+
+        <div class="ui vertical stripe segment">
+            <div class="ui text container">
+                <h3 class="ui header">Single Page Application</h3>
+                <p> SPA is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience similar to a desktop application. In a SPA, either all necessary code, HTML, JavaScript and CSS is retrieved with
+                    a single page load or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions.</p>
+                <a class="ui huge yellow button" href="https://en.wikipedia.org/wiki/Single-page_application">Read More</a>
+            </div>
+        </div>
+
+        <div class="ui vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable divided equal height stackable grid">
+                    <div class="three wide column">
+                        <h4 class="ui header">Github</h4>
+                        <div class="ui link list">
+                            <a href="https://github.com/websemantics/gh-pages-spa" class="item">Fork Me</a>
+                            <a href="https://github.com/rafrex/spa-github-pages" class="item">React SPA gh-Pages</a>
+                            <a href="https://github.com/csuwildcat/sghpa" class="item">SPA Template</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui header">Links</h4>
+                        <div class="ui link list">
+                            <a href="https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/" class="item">Single Page App Hack</a>
+                            <a href="http://www.flaticon.com/packs/pokemon-go" class="item">Pokemon Go Icons</a>
+                            <a href="https://pages.github.com/" class="item">Github Pages</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui header">Company</h4>
+                        <p>Built with <img src="assets/img/heart.svg">by Web Semantics, Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
