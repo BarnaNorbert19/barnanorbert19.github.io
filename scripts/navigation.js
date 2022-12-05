@@ -4,7 +4,7 @@ function loadPage(path, loadInto, pushStateTitle, pushStateUrl)
     history.pushState(path, pushStateTitle, pushStateUrl);
 }
 
-function loadPageSynchronously(path, loadInto, pushStateTitle, pushStateUrl)
+function loadPageSynchronouslyWithPushState(path, loadInto, pushStateTitle, pushStateUrl)
 {
     $.ajax({
         type: "GET",
@@ -109,13 +109,13 @@ $(function()
     $('#pathfinding-visualizer-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+        loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+
+        setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
         changeActivePage('#projects-page', activePage);
         activePage = '#projects-page';
-
-        setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
-        });
+    });
 
     //Navbar Notes page onclick
     $('#notes-page').on('click', function(e)
