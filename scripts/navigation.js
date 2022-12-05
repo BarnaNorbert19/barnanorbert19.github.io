@@ -74,26 +74,26 @@ $(function()
               changeActivePage('#about-me-page', activePage);
               activePage = '#about-me-page';
               break;
-            case "Pathfinding":
-              loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+            case "Pathfinding-overview":
+              loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding-overview");
 
               setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
               changeActivePage('#projects-page', activePage);
               activePage = '#projects-page';
               break;
-            case "Notes":
-              loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes");
+            case "Notes-overview":
+              loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes-overview");
               changeActivePage('#projects-page', activePage);
               activePage = '#notes-page';
               break;
-            case "Class-register":
-              loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register");
+            case "Class-register-overview":
+              loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register-overview");
               changeActivePage('#projects-page', activePage);
               activePage = '#projects-page';
               break;
-              case "Smaller-projects":
-              loadPage("/../Pages/Projects/smaller-projects-overview.html", '#desc-container', "Smaller projects", "./Smaller-projects");
+              case "Smaller-projects-overview":
+              loadPage("/../Pages/Projects/smaller-projects-overview.html", '#desc-container', "Smaller projects", "./Smaller-projects-overview");
               changeActivePage('#projects-page', activePage);
               activePage = '#projects-page';
               break;
@@ -123,7 +123,7 @@ $(function()
     $('#pathfinding-visualizer-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+        loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding-overview");
 
         setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
@@ -135,7 +135,7 @@ $(function()
     $('#notes-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes");
+        loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes-overview");
         changeActivePage('#projects-page', activePage);
         activePage = '#notes-page';
     });
