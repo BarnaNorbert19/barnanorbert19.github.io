@@ -64,7 +64,8 @@ $(function()
     //Initial load based on document.referrer (redirect)
     var comingFrom = document.referrer.split("/")[3];
 
-        switch(comingFrom) {
+        switch(comingFrom) 
+        {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
               break;
@@ -74,7 +75,7 @@ $(function()
               activePage = '#about-me-page';
               break;
             case "Pathfinding":
-              loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+              loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
 
               setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
@@ -107,7 +108,6 @@ $(function()
         loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
         changeActivePage('#home-page', activePage);
         activePage = '#home-page';
-        
     });
 
     //Navbar about me page onclick
@@ -123,7 +123,7 @@ $(function()
     $('#pathfinding-visualizer-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+        loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
 
         setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
@@ -166,6 +166,8 @@ $(function()
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
         else
+        {
             $('#desc-container').load('/../Pages/index-text.html');
+        }
     });
 });
