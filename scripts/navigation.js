@@ -1,3 +1,5 @@
+let activePage = '#home-page';
+
 function loadPage(path, loadInto, pushStateTitle, pushStateUrl)
 {
     $(loadInto).load(path);
@@ -6,6 +8,7 @@ function loadPage(path, loadInto, pushStateTitle, pushStateUrl)
 
 function loadPageSynchronouslyWithPushState(path, loadInto, pushStateTitle, pushStateUrl)
 {
+
     $.ajax({
         type: "GET",
         url: path,
@@ -64,43 +67,25 @@ $(function()
         switch(comingFrom) {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
-              changeActivePage('#home-page', activePage);
-              activePage = '#home-page';
               break;
             case "About-me":
               loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
-              changeActivePage('#about-me-page', activePage);
-              activePage = '#about-me-page';
               break;
             case "Pathfinding":
-              loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
-
-              setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
-        
-              changeActivePage('#projects-page', activePage);
-              activePage = '#projects-page';
+              loadPage("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
               break;
             case "Notes":
-              changeActivePage('#projects-page', activePage);
-              activePage = '#notes-page';
+              loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes");
               break;
             case "Class-register":
               loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register");
-              changeActivePage('#projects-page', activePage);
-              activePage = '#projects-page';
               break;
               case "Smaller-projects":
               loadPage("/../Pages/Projects/smaller-projects-overview.html", '#desc-container', "Smaller projects", "./Smaller-projects");
-              changeActivePage('#projects-page', activePage);
-              activePage = '#projects-page';
               break;
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
-              changeActivePage('#home-page', activePage);
-              activePage = '#home-page';
           }
-
-    let activePage = '#home-page';
 
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
@@ -125,7 +110,7 @@ $(function()
     $('#pathfinding-visualizer-page').on('click', function(e)
     {
         e.preventDefault();
-        loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+        loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
 
         setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
