@@ -74,16 +74,27 @@ $(function()
               activePage = '#about-me-page';
               break;
             case "Pathfinding":
-              loadPage("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+              loadPageSynchronously("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
+
+              setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
+        
+              changeActivePage('#projects-page', activePage);
+              activePage = '#projects-page';
               break;
             case "Notes":
               loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes");
+              changeActivePage('#projects-page', activePage);
+              activePage = '#notes-page';
               break;
             case "Class-register":
               loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register");
+              changeActivePage('#projects-page', activePage);
+              activePage = '#projects-page';
               break;
               case "Smaller-projects":
               loadPage("/../Pages/Projects/smaller-projects-overview.html", '#desc-container', "Smaller projects", "./Smaller-projects");
+              changeActivePage('#projects-page', activePage);
+              activePage = '#projects-page';
               break;
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
