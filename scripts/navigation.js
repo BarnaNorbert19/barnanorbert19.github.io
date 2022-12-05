@@ -70,6 +70,8 @@ $(function()
               break;
             case "About-me":
               loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
+              changeActivePage('#about-me-page', activePage);
+              activePage = '#about-me-page';
               break;
             case "Pathfinding":
               loadPage("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding");
