@@ -64,7 +64,8 @@ DNS backend: [SAMBA_INTERNAL]
 DNS forwarder IP address [8.8.8.8]: 8.8.8.8
 Administrator password: Aa123456
 ```
-## Nevezzük át, vagy távolítsuk el a Kerberos fõ konfigurációs fájlját a /etc könyvtárból. Majd linkeljük a /var/lib/samba/private mappában lévõ Kerberos fájlt.
+## Nevezzük át, vagy távolítsuk el a Kerberos fõ konfigurációs fájlját. 
+A fájlt az /etc könyvtárban találjuk. Majd linkeljük a /var/lib/samba/private mappában lévő Kerberos fájlt.
 ```bash
 mv /etc/krb5.conf /etc/krb5.conf.original
 ```
