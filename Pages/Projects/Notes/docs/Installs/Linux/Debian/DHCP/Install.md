@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Install
+# Telepítés
 
 :::tip Automatikus bash script
 
