@@ -65,6 +65,8 @@ function pageAction(comingFrom)
         {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              changeActivePage('#home-page', activePage);
+              activePage = '#home-page';
               break;
             case "About-me":
               loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
@@ -96,6 +98,8 @@ function pageAction(comingFrom)
               break;
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              changeActivePage('#home-page', activePage);
+              activePage = '#home-page';
           }
 
 }
