@@ -173,7 +173,7 @@ $(function()
         if (e.originalEvent.state != null)
         {
           $('#desc-container').load(e.originalEvent.state);
-          onPageRefreshAction(comingFrom);
+          onPageRefreshAction(e.originalEvent.state);
         }
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
