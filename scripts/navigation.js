@@ -59,9 +59,12 @@ function setTextChangeButton(source1, source2)
     });
 }
 
-function onPageRefreshAction(comingFrom)
+$(function()
 {
-  switch(comingFrom) 
+    //Initial load based on document.referrer (redirect)
+    var comingFrom = document.referrer.split("/")[3];
+
+        switch(comingFrom) 
         {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
@@ -97,14 +100,6 @@ function onPageRefreshAction(comingFrom)
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
           }
-}
-
-$(function()
-{
-    //Initial load based on document.referrer (redirect)
-    var comingFrom = document.referrer.split("/")[3];
-
-    onPageRefreshAction(comingFrom);
 
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
@@ -142,7 +137,7 @@ $(function()
         e.preventDefault();
         loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes-overview");
         changeActivePage('#projects-page', activePage);
-        activePage = '#projects-page';
+        activePage = '#notes-page';
     });
 
     //Navbar class register page onclick
@@ -167,9 +162,7 @@ $(function()
     $(window).on('popstate', function(e)
     {
         if (e.originalEvent.state != null)
-        {
-          $('#desc-container').load(e.originalEvent.state);
-        }
+            $('#desc-container').load(e.originalEvent.state);
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
         else
