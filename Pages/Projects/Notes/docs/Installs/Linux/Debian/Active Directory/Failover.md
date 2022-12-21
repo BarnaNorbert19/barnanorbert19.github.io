@@ -7,4 +7,4 @@ sidebar_position: 2
 
 Letölthető [itt](../../../../Scripts/AD_Failover_Install.sh)
 
-:::
+::: 

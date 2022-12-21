@@ -59,12 +59,9 @@ function setTextChangeButton(source1, source2)
     });
 }
 
-$(function()
+function onPageRefreshAction(comingFrom)
 {
-    //Initial load based on document.referrer (redirect)
-    var comingFrom = document.referrer.split("/")[3];
-
-        switch(comingFrom) 
+  switch(comingFrom) 
         {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
@@ -100,6 +97,14 @@ $(function()
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
           }
+}
+
+$(function()
+{
+    //Initial load based on document.referrer (redirect)
+    var comingFrom = document.referrer.split("/")[3];
+
+    onPageRefreshAction(comingFrom);
 
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
@@ -161,6 +166,7 @@ $(function()
     //Browser history
     $(window).on('popstate', function(e)
     {
+      onPageRefreshAction(comingFrom);
         if (e.originalEvent.state != null)
             $('#desc-container').load(e.originalEvent.state);
         

@@ -1,7 +1,8 @@
 ---
+title: Telepítés
 sidebar_position: 1
 ---
-# Install
+# Telepítés
 
 :::tip Automatikus powershell script
 

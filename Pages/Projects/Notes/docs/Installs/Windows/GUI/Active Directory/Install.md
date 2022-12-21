@@ -1,5 +1,6 @@
 ---
 title: Telepítés
+sidebar_position: 1
 ---
 
 # Telepítés
@@ -20,7 +21,7 @@ title: Telepítés
 ![Imgur](https://i.imgur.com/KibZMEl.png)
 
 ### Promote server
-#### A szervert domain controlleré kell előléptetnünk, ami annyit jelent, ez a szerver lesz a domain fő szervere, ahova a kérések befutnak
+#### A szervert domain controlleré kell előléptetnünk.
 ![Imgur](https://i.imgur.com/wk8c6cO.png)
 
 ### Domain név és Forest

@@ -41,7 +41,6 @@ function AutoInstallFailoverAD {
     }
     
     process {
-        try {
             Write-Output("Installing Active Directory Services...")
             Add-WindowsFeature AD-Domain-Services
         
@@ -51,11 +50,6 @@ function AutoInstallFailoverAD {
 
             Write-Output("Setting DNS forwarder...")
             Set-DnsServerForwarder -IPAddress $ForwarderIp
-        }
-        catch {
-            Write-Host "An error occurred (at " + $_.ScriptStackTrace + "):"
-            Write-Host $_
-        }
     }
     
     end {
