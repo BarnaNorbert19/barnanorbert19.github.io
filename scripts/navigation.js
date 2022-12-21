@@ -65,6 +65,8 @@ function onPageRefreshAction(comingFrom)
         {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              changeActivePage('#home-page', activePage);
+              activePage = '#home-page';
               break;
             case "About-me":
               loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
@@ -96,6 +98,8 @@ function onPageRefreshAction(comingFrom)
               break;
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              changeActivePage('#home-page', activePage);
+              activePage = '#home-page';
           }
 }
 
@@ -142,7 +146,7 @@ $(function()
         e.preventDefault();
         loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes-overview");
         changeActivePage('#projects-page', activePage);
-        activePage = '#notes-page';
+        activePage = '#projects-page';
     });
 
     //Navbar class register page onclick
@@ -166,9 +170,10 @@ $(function()
     //Browser history
     $(window).on('popstate', function(e)
     {
-      onPageRefreshAction(comingFrom);
         if (e.originalEvent.state != null)
-            $('#desc-container').load(e.originalEvent.state);
+        {
+          $('#desc-container').load(e.originalEvent.state);
+        }
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
         else
