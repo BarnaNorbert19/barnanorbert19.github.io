@@ -59,12 +59,9 @@ function setTextChangeButton(source1, source2)
     });
 }
 
-$(function()
+function pageAction(comingFrom)
 {
-    //Initial load based on document.referrer (redirect)
-    var comingFrom = document.referrer.split("/")[3];
-
-        switch(comingFrom) 
+  switch(comingFrom) 
         {
             case "Home":
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
@@ -100,6 +97,15 @@ $(function()
             default:
               loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
           }
+
+}
+
+$(function()
+{
+    //Initial load based on document.referrer (redirect)
+    var comingFrom = document.referrer.split("/")[3];
+
+    pageAction(comingFrom);
 
     //Navbar home page onclick
     $('#home-page').on('click', function(e)
@@ -162,7 +168,10 @@ $(function()
     $(window).on('popstate', function(e)
     {
         if (e.originalEvent.state != null)
+        {
             $('#desc-container').load(e.originalEvent.state);
+            pageAction(location.href.split('/')[3]);
+        }
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
         else
