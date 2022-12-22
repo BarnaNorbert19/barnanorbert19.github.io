@@ -59,7 +59,7 @@ function setTextChangeButton(source1, source2)
     });
 }
 
-function pageAction(comingFrom, push)
+function pageAction(comingFrom, push = true)
 {
   switch(comingFrom) 
         {
@@ -217,7 +217,7 @@ $(function()
         if (e.originalEvent.state != null)
         {
             $('#desc-container').load(e.originalEvent.state);
-            pageAction(location.href.split('/')[3]);
+            pageAction(location.href.split('/')[3], false);
         }
         
         //if we run out of browser history, e.originalEvent.state will be null so we just redirect to home page
