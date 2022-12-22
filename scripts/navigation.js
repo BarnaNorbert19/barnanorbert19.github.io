@@ -59,35 +59,72 @@ function setTextChangeButton(source1, source2)
     });
 }
 
-function pageAction(comingFrom)
+function pageAction(comingFrom, push)
 {
   switch(comingFrom) 
         {
             case "Home":
-              loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              var path = "/../Pages/index-text.html";
+              var loadInto = '#desc-container';
+
+              if (push)
+                loadPage(path, loadInto, "Home Page", "./Home");
+              else
+                $(loadInto).load(path);
+
               changeActivePage('#home-page', activePage);
               activePage = '#home-page';
               break;
+
             case "About-me":
-              loadPage("/../Pages/about-me-text.html", "#desc-container", "About me", "./About-me");
+              var path = "/../Pages/index-text.html";
+              var loadInto = "#desc-container";
+
+              if (push)
+                loadPage(path, loadInto, "About me", "./About-me");
+              else
+                $(loadInto).load(path);
+
               changeActivePage('#about-me-page', activePage);
               activePage = '#about-me-page';
               break;
-            case "Pathfinding-overview":
-              loadPageSynchronouslyWithPushState("/../Pages/Projects/pathfinding-visualizer-overview.html", '#desc-container', "Pathfinding visualizer", "./Pathfinding-overview");
 
+            case "Pathfinding-overview":
+              var path = "/../Pages/Projects/pathfinding-visualizer-overview.html";
+              var loadInto = '#desc-container';
+
+              if (push)
+                loadPageSynchronouslyWithPushState(path, loadInto, "Pathfinding visualizer", "./Pathfinding-overview");
+              else 
+                loadPageSynchronously(path, loadInto);
               setTextChangeButton("/../Pages/Projects/ShortTexts/pathfinding-visualizer-overview-short.html", "/../Pages/Projects/pathfinding-visualizer-overview.html");
         
               changeActivePage('#projects-page', activePage);
               activePage = '#projects-page';
               break;
+
             case "Notes-overview":
-              loadPage("/../Pages/Projects/notes-overview.html", '#desc-container', "Notes", "./Notes-overview");
-              changeActivePage('#projects-page', activePage);
-              activePage = '#notes-page';
-              break;
+            var path = "/../Pages/Projects/notes-overview.html";
+            var loadInto = '#desc-container';
+
+              if (push)
+                loadPage(path, loadInto, "Notes", "./Notes-overview");
+              else
+                $(loadInto).load(path);
+
+            changeActivePage('#projects-page', activePage);
+            activePage = '#notes-page';
+            break;
+
             case "Class-register-overview":
-              loadPage("/../Pages/Projects/class-register-overview.html", '#desc-container', "Class register", "./Class-register-overview");
+              var path = "/../Pages/Projects/class-register-overview.html";
+              var loadInto = '#desc-container';
+
+              if (push)
+                loadPage(path, loadInto, "Class register", "./Class-register-overview");
+              else
+                $(loadInto).load(path);
+
               changeActivePage('#projects-page', activePage);
               activePage = '#projects-page';
               break;
@@ -97,7 +134,13 @@ function pageAction(comingFrom)
               activePage = '#projects-page';
               break;
             default:
-              loadPage("/../Pages/index-text.html", '#desc-container', "Home Page", "./Home");
+              var path = "/../Pages/index-text.html";
+              var loadInto = '#desc-container';
+
+              if (push)
+                loadPage(path, loadInto, "Home Page", "./Home");
+              else
+                $(loadInto).load(path);
               changeActivePage('#home-page', activePage);
               activePage = '#home-page';
           }
