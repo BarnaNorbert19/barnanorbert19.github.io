@@ -212,12 +212,12 @@ $(function()
     });
 
     //Browser history
-    $(window).on('popstate', function(e, state)
+    $(window).on('popstate', function(e)
     {
         if (e.originalEvent.state != null)
         {
             //$('#desc-container').load(e.originalEvent.state);
-            pageAction(location.href.split('/')[3], state > 0 ? true : false);
+            pageAction(location.href.split('/')[3], false);
             
         }
         
