@@ -77,7 +77,7 @@ function pageAction(comingFrom, push = true)
               break;
 
             case "About-me":
-              var path = "/../Pages/index-text.html";
+              var path = "/../Pages/about-me-text.html";
               var loadInto = "#desc-container";
 
               if (push)
