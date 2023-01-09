@@ -29,8 +29,7 @@ function AutoInstallFailoverAD {
         $DomainName,
 
         # DNS forwarder IP address.
-        [Parameter(Mandatory = $true, HelpMessage = "IP address of the DNS server")]
-        [ValidateNotNullOrEmpty]
+        [Parameter(Mandatory = $true, HelpMessage = "IP address of the DNS server, leave blank if you want to set it manually")]
         [ipaddress]
         $ForwarderIp
     )
@@ -41,15 +40,18 @@ function AutoInstallFailoverAD {
     }
     
     process {
-            Write-Output("Installing Active Directory Services...")
-            Add-WindowsFeature AD-Domain-Services
+        $ErrorActionPreference = "Stop"
+        Write-Host("Installing Active Directory Services...")
+        Add-WindowsFeature AD-Domain-Services
         
-            $credentials = New-Object System.Management.Automation.PSCredential($Username, $Password)
-            Write-Output("Configuring Active Directory Failover...")
-            Install-ADDSDomainController -CreateDnsDelegation:$false -DatabasePath 'C:\Windows\NTDS' -DomainName $DomainName -InstallDns:$true -LogPath 'C:\Windows\NTDS' -NoGlobalCatalog:$false -SiteName 'Default-First-Site-Name' -SysvolPath 'C:\Windows\SYSVOL' -NoRebootOnCompletion:$true -Force:$true -Credential $credentials
+        $credentials = New-Object System.Management.Automation.PSCredential($Username, $Password)
+        Write-Host("Configuring Active Directory Failover...")
+        Install-ADDSDomainController -CreateDnsDelegation:$false -DatabasePath 'C:\Windows\NTDS' -DomainName $DomainName -InstallDns:$true -LogPath 'C:\Windows\NTDS' -NoGlobalCatalog:$false -SiteName 'Default-First-Site-Name' -SysvolPath 'C:\Windows\SYSVOL' -NoRebootOnCompletion:$true -Force:$true -Credential $credentials
 
-            Write-Output("Setting DNS forwarder...")
+        if ($ForwarderIp) {
+            Write-Host("Setting DNS forwarder...")
             Set-DnsServerForwarder -IPAddress $ForwarderIp
+        }
     }
     
     end {

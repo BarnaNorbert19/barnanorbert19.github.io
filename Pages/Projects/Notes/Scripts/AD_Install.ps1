@@ -35,10 +35,10 @@ function AutoInstallAD {
     }
     
     process {
-        
-        Write-Output("Installing Active Directory Services...")
+        $ErrorActionPreference = "Stop"
+        Write-Host("Installing Active Directory Services...") -ForegroundColor Green
         Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-        Write-Output("Configuring Active Directory...")
+        Write-Host("Configuring Active Directory...") -ForegroundColor Green
         $domainNetbiosName = $DomainName.Split('.')[0].ToUpper()
         Install-ADDSFOREST -DomainName $DomainName.ToUpper() -DomainNetbiosName $domainNetbiosName -Force -DomainMode $DomainMode -ForestMode $ForestMode
     
